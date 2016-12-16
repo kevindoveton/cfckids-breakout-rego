@@ -60,20 +60,20 @@ html
 				//- label Name
 				ul
 					li
-						input(type="text", minlength="2", name="fName")#fName
-						label First Name
+						input(type="text", minlength="2", name="fName", data-parsley-trigger="change" required="")#fName
+						label First Name*
 					li
-						input(type="text", name="lName")#lName
-						label Surname
+						input(type="text", name="lName", data-parsley-trigger="change" required="")#lName
+						label Surname*
 					li
-						input(type="text", name="address")#address
-						label Postal Address
+						input(type="text", name="address", data-parsley-trigger="change" required="")#address
+						label Postal Address*
 					li
-						input(type="date", name="dob")#birthDate
-						label Date of Birth
+						input(type="date", name="dob", data-parsley-trigger="change" required="")#birthDate
+						label Date of Birth*
 					li
-						input(type="text", name="yearLevel")#yearLevel
-						label School Year Level
+						input(type="text", name="yearLevel", data-parsley-trigger="change" required="")#yearLevel
+						label School Year Level*
 
 				button.previous Previous
 				button.next Next
@@ -128,31 +128,31 @@ html
 				ul
 					p#nominatedText Nominated adult to pick up child from Breakout Carnival
 					li
-						input(type="text", name="nominatedAdult")
-						label Nominated Adult
+						input(type="text", name="nominatedAdult", data-parsley-trigger="change" required="")
+						label Nominated Adult*
 
 					//- Main Contact
 					li
 						h2 Emergency Contact
 					li
-						input(type="text", name="emergContactName")
-						label Name
+						input(type="text", name="emergContactName", data-parsley-trigger="change" required="")
+						label Name*
 					li
-						input(type="text", name="emergContactNumber")
-						label Contact Number
+						input(type="text", name="emergContactNumber", data-parsley-trigger="change" required="")
+						label Contact Number*
 					li
-						input(type="text", name="emergContactEmail")
-						label Email Address
+						input(type="text", name="emergContactEmail", data-parsley-trigger="change" required="")
+						label Email Address*
 
 					//- Alternate
 					li
 						h2 Alternative Emergency Contact
 					li
-						input(type="text", name="altEmergContactName")
-						label Name
+						input(type="text", name="altEmergContactName", data-parsley-trigger="change" required="")
+						label Name*
 					li
-						input(type="text", name="altEmergContactNumber")
-						label Contact Number
+						input(type="text", name="altEmergContactNumber", data-parsley-trigger="change" required="")
+						label Contact Number*
 
 				button.previous Previous
 				button.next Next
@@ -178,16 +178,16 @@ html
 					ul
 						li
 							input(type="text", placeholder="Name On Card", name="cardName")
-							label Name On Card
+							label Name On Card*
 						li
 							input(type="text", placeholder="Card Number", name="cardNumber")
-							label Card Number
+							label Card Number*
 						li
 							input(type="text", placeholder="Expiry", name="cardExpiry")
-							label Expiry Date
+							label Expiry Date*
 						li
 							input(type="text", placeholder="CVC", name="cardCVC")
-							label CVC
+							label CVC*
 						li
 							button(onclick="paymentMethod('cash', this); return false;").blue Prefer Cash?
 					button.previous Previous

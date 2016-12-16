@@ -1,4 +1,11 @@
 $(function() {
+	// // Always redirect to https
+	// var loc = window.location.href+'';
+	// if (loc.indexOf('http://')==0){
+	// 	window.location.href = loc.replace('http://','https://');
+	// }
+
+
 	// Hide and Show Divs based on Choices
 	// ----------------------------------------------------
 

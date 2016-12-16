@@ -9,7 +9,12 @@ $(function() {
 		$("#anyOtherInfoText").text("Is there any other information – or health plan - which might assist us to care for "+childName+"? Please give details:");
 	});
 
-	
+	// Inital group selection - parsley
+	var $sections = $('fieldset');
+	var currentIndex = 0;
+	$sections.each(function(index, section) {
+		$(section).find(':input').attr('data-parsley-group', 'block-' + index);
+	});
 
 	// ANIMATIONS
 	// -------------------------------------------------
@@ -19,6 +24,14 @@ $(function() {
 	var animating; //flag to prevent quick multi-click glitches
 
 	$(".next").click(function() {
+
+		// Validations
+		if (!($('form').parsley().validate({group: 'block-' + currentIndex})))
+			return false;
+
+		currentIndex += 1;
+
+		// Animations
 		if(animating) return false;
 		animating = true;
 
@@ -62,6 +75,8 @@ $(function() {
 
 
 	$(".previous").click(function() {
+		currentIndex -= 1;
+
 		if(animating) return false;
 		animating = true;
 
