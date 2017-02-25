@@ -4,6 +4,7 @@
 @import "includes/loader"
 @import "includes/checkbox"
 @import "includes/parsley"
+
 html
 	height: 100%
 	background: $blue
@@ -64,9 +65,17 @@ form
 
 	ul
 		list-style: none
+		& > li
+			margin-top: 1em
+			position: relative
 
-	li
-		position: relative
+	ol
+		margin-left: 1em
+		li
+			margin-left: auto
+			margin-right: auto
+			max-width: 500px
+			text-align: left
 
 	label
 		border-top-left-radius: 3px

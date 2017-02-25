@@ -11,10 +11,48 @@ $(function() {
 	});
 });
 
+function showJuniorCamp() {
+	$("div.junior.camp").css({display: 'block'});
+	$("div.choose").css({display: 'none'});
+}
+
+function redirect(loc) {
+	window.location = loc;
+	return false;
+}
+
+function showSeniorCamp() {
+	$("div.senior.camp").css({display: 'block'});
+	$("div.choose").css({display: 'none'});
+}
+
 function submitForm() {
+	var $_GET = {};
+	if(document.location.toString().indexOf('?') !== -1) {
+		var query = document.location
+			.toString()
+			// get the query string
+			.replace(/^.*?\?/, '')
+			// and remove any existing hash string (thanks, @vrijdenker)
+			.replace(/#.*$/, '')
+			.split('&');
+
+		for(var i=0, l=query.length; i<l; i++) {
+			var aux = decodeURIComponent(query[i]).split('=');
+			$_GET[aux[0]] = aux[1];
+		}
+	}
+	
+	var url = "/ajax/breakoutcarnival/";
+	if ($_GET['q'] == "senior") {
+		url += "?q=senior";
+	} else {
+		url += "?q=junior";
+	}
+	
 	// $("#loaders").removeClass("hidden").animate({opacity: 1});
 	var d = $("form").serialize();
-	$.post("/ajax/breakoutcarnival/", d, function(data) {
+	$.post(url, d, function(data) {
 		if (data === "success")
 		{
 			// Make Feedback Right Size

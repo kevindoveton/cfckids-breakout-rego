@@ -11,237 +11,124 @@ html
 		script(type="text/javascript" src="js/dist.js")
 
 		//- css
-		link(rel="stylesheet", href="css/register.css")
+		link(rel="stylesheet", href="css/style.css")
 	body
-		form
-			//- Progress Bar
-			ul#progressBar
-				li.active Photo Consent
-				li Medical Consent
-				li Child Details
-				li Medical <br />
-				li Parent / Carer
-				li Payment
-
-			fieldset
+		div.camp.choose
+			h1 Junior Camp
+			h2 5 years to year 1
+			button(onclick="showJuniorCamp()") Register
+			
+			p &nbsp;
+			
+			h1 Senior Camp
+			h2 years 2 - 5
+			button(onclick="showSeniorCamp()") Register
+			
+		div.junior.camp
+			div.title
+				h1 Junior Day Camp - 24 April, 2017
+				h2 Junior Day Camp is for children aged from 5 years through to Year 1
+			hr
+			div.details
+				h3 Venue
+				p.
+					Christian Family Centre <br />
+					185 Frederick Road, Seaton
+				h3 Drop Off
+				p 10am, Monday 24 April
+				h3 Pick Up
+				p 5pm, Monday 24 April
+				p.fullwidth The types of activities we will be undertaking are: fun games, teaching and object lessons, small groups, creative activities, sporting games. All activities will be appropriately supervised. If you would like a copy of our CFC Child & Youth C.A.R.E Policy please contact Michael Tompich (Camp Coordinator) or Chey Drew (Children’s Ministry Director).
+				h3 Camp Fee
+				p $30 per child
+				p.fullwidth Please contact Michael Tompich at michaelt@familycentre.org.au or speak with him in person if you need to reduce camp costs for a child who would otherwise not be able to attend.
+				h3 Contact Leader 1 <br /> Day Camp Coordinator
+				p Michael Tompich, 0421 603 793 <br /> <a href="mailto:michaelt@familycentre.org.au">michaelt@familycentre.org.au</a>
+				h3 Contact Leader 2
+				p Chey Drew, 0405 650 396 <br /> <a href="mailto:cheyd@familycentre.org.au">cheyd@familycentre.org.au</a>
+				h3 What to Bring?
 				ul
 					li
-						h1 PHOTO CONSENT
-						p.
-							The Christian Family Centre is requesting permission to take photographs or record video footage of your child for express use on publications, multi-media presentations or websites belonging to CFC. No personally identifiable information regarding your child will be published or provided to other organisations or individuals, except where this information is required by law, reporting suspected abuse or neglect, or in the case of an emergency. Personally identifiable information includes: participant names, photo or image, residential address, email address or phone numbers.
-
-				input(type="hidden", name="photoConsent")#photoConsent
-
-				button.next.disagree(onClick="setPhotoConsent(false)") I Do Not Agree
-				button.next(onClick="setPhotoConsent(true)") I Agree
-
-			fieldset
+						p Hat
+					li
+						p Water Bottle
+					li
+						p Jumper (if colder weather)
+					li
+						p Bible (if you have one)
+					li
+						p Enclosed footwear
+					li
+						p Any prescription medication (please provide details)
+				h3 What to leave at home?
 				ul
 					li
-						h1 Medical Consent
-						h2 BY SIGNING THIS FORM YOU UNDERSTAND / AGREE THAT:
-
-						p.
-							• Team Leaders for this CFC program have your consent to take whatever action necessary to ensure the safety and well being of the group or individual participants under their care (includes your child or your nominated emergency contact person).<br />
-							• If your child becomes ill or is injured and you cannot be contacted, Team Leaders may obtain on your behalf whatever medical treatment is deemed necessary. You also agree to pay for such medical expenses.<br />
-							• If you fail or neglect to provide sufficient and current information in writing to enable the proper treatment of your child, no liability will be accepted for any injury or illness, which your child may suffer as a result.<br />
-							• An ambulance may be called in the case of an emergency.
+						p DS / iPad / Gaming Systems etc
 					li
-						h1 Christian content
-						p.
-							By signing this form I understand that Christian content is included as part of this event.
-
-				button.previous Previous
-				button.next I Agree
-			//- Child
-			fieldset
-				h1 Breakout Carnival
-				h2 Child Details
-				//- label Name
+						p Lollies / Snacks (there will be lots of yummy food!)
+					li
+						p Toys - anything that could get lost or broken
+					li
+						p Pocket knives or any other sharp object
+			form
+				button(onclick="return redirect('register.html?q=junior');")
+					p Register	
+		div.senior.camp
+			div.title
+				h1 Senior Kids Camp - 26 - 28 April, 2017
+				h2 Senior Kids Camp is for children in Yrs 2-5 at Primary School
+			hr
+			div.details
+				h3 Venue
+				p.
+					Toc H Campsite <br />
+					Waggon Road, Victor Harbor
+				h3 Drop Off
+				p 2pm, Wednesday 26 April
+				h3 Pick Up
+				p 11am, Friday 28 April
+				p.fullwidth The types of activities we will be undertaking are: fun games, teaching and object lessons, small groups, creative activities, sporting games and sand castle making (weather permitting /no swimming) at the beach (20 min walk via boardwalk / underpass). All activities will be appropriately supervised. If you would like a copy of our CFC Child & Youth C.A.R.E Policy please contact Michael Tompich (Camp Coordinator) or Chey Drew (Children’s Ministry Director).
+				h3 Camp Fee
+				p $105 per child
+				p.fullwidth All children in Yrs 2-5 welcome! Please contact Michael Tompich at michaelt@familycentre.org.au or speak with him in person if you need to reduce camp costs for a child who would otherwise not be able to attend.
+				h3 Contact Leader 1
+				p Michael Tompich (Camp Coordinator), 0421 603 793
+				h3 Contact Leader 2
+				p Chey Drew, 0405 650 396
+				h3 What to Bring?
 				ul
 					li
-						input(type="text", minlength="2", name="fName", data-parsley-trigger="change" required="")#fName
-						label First Name*
+						p Hat
 					li
-						input(type="text", name="lName", data-parsley-trigger="change" required="")#lName
-						label Surname*
+						p Pillow
 					li
-						input(type="text", name="address", data-parsley-trigger="change" required="")#address
-						label Postal Address*
+						p Sleeping Bag or Full Bedding
 					li
-						input(type="date", name="dob", data-parsley-trigger="change" required="")#birthDate
-						label Date of Birth*
+						p PJs and Clothes
 					li
-						input(type="text", name="yearLevel", data-parsley-trigger="change" required="")#yearLevel
-						label School Year Level*
-
-				button.previous Previous
-				button.next Next
-
-			//- Medical
-			fieldset
-				h1 Medical
-				ul.radio
-					p#sufferAnyFollowingText Does your child or young person suffer from any of the following that Team Leaders should know about to assist in their care? (Asthma, Severe Allergies, Dietary Needs, Convulsive Seizures, Physical Needs)
+						p Extra warm clothes for night time
 					li
-						input(type="radio", name="conditions", id="conditionsYes", value="yes")
-						label(for="conditionsYes") Yes
+						p Bible (if you have one)
 					li
-						input(type="radio", name="conditions", id="conditionsNo", value="no" checked)
-						label(for="conditionsNo") No
+						p Toiletries
+					li
+						p Towel
+					li
+						p Good walking shoes
+					li
+						p Small torch (optional)
+					li
+						p Any prescription medication (please provide details)
+				h3 What to leave at home?
 				ul
 					li
-						div#conditionsTextDiv.displayNone
-							input(type="text", name="conditionsText")
-							label More Information
-				ul.radio
-					p#immunisationsText Is your child / young person fully up to date with their immunisations for their age?
+						p DS / iPad / Gaming Systems etc
 					li
-						input(type="radio", name="immunisations", id="immunisationsYes", value="yes" checked)
-						label(for="immunisationsYes") Yes
+						p Lollies / Snacks (there will be lots of yummy food!)
 					li
-						input(type="radio", name="immunisations", id="immunisationsNo", value="no")
-						label(for="immunisationsNo") No
-
-					p#noImmunisationsText.displayNone.smallFont
-						i If no, by submitting this form you understand that you or the alternative contact person you nominate will be required to promptly withdraw your child from our program should we become aware of any ‘communicable disease’ to which they may have unknowingly been exposed.
-
-					p#anyOtherInfoText Is there any other information – or health plan - which might assist us to care for your child? Please give details:
-
+						p Toys - anything that could get lost or broken
 					li
-						input(type="radio", name="otherInformation", id="otherInformationYes", value="yes")
-						label(for="otherInformationYes") Yes
-					li
-						input(type="radio", name="otherInformation", id="otherInformationNo", value="no" checked)
-						label(for="otherInformationNo") No
-				ul
-					li
-						div#otherInfoDiv.displayNone
-							input(type="text", name="otherInformationText")
-							label More Information
-				button.previous Previous
-				button.next Next
-
-			//- Parent / Carer
-			fieldset
-				h1 Parent / Carer
-				ul
-					p#nominatedText Nominated adult to pick up child from Breakout Carnival
-					li
-						input(type="text", name="nominatedAdult", data-parsley-trigger="change" required="")
-						label Nominated Adult*
-
-					//- Main Contact
-					li
-						h2 Emergency Contact
-					li
-						input(type="text", name="emergContactName", data-parsley-trigger="change" required="")
-						label Name*
-					li
-						input(type="text", name="emergContactNumber", data-parsley-trigger="change" required="")
-						label Contact Number*
-					li
-						input(type="text", name="emergContactEmail", data-parsley-trigger="change" required="")
-						label Email Address*
-
-					//- Alternate
-					li
-						h2 Alternative Emergency Contact
-					li
-						input(type="text", name="altEmergContactName", data-parsley-trigger="change" required="")
-						label Name*
-					li
-						input(type="text", name="altEmergContactNumber", data-parsley-trigger="change" required="")
-						label Contact Number*
-
-				button.previous Previous
-				button.next Next
-
-			//- Payment
-			fieldset
-				h1 Payment
-				h2 How would you like to pay?
-
-				div.paymentButtons
-					button(onclick="paymentMethod('cash', this); return false;") Cash
-					button(onclick="paymentMethod('credit', this); return false;") Credit
-					input(type="hidden", name="payMethod")#payMethod
-				div#cash.displayNone
-					p Please bring $7 to Breakout Carnival.
-					ul
-						li
-							button(onclick="paymentMethod('credit', this); return false;").blue Prefer Credit?
-					button.previous Previous
-					button.next(onclick="submitForm()") Submit
-
-				div#credit.displayNone
-					ul
-						li
-							input(type="text", placeholder="Name On Card", name="cardName")
-							label Name On Card*
-						li
-							input(type="text", placeholder="Card Number", name="cardNumber")
-							label Card Number*
-						li
-							input(type="text", placeholder="Expiry", name="cardExpiry")
-							label Expiry Date*
-						li
-							input(type="text", placeholder="CVC", name="cardCVC")
-							label CVC*
-						li
-							button(onclick="paymentMethod('cash', this); return false;").blue Prefer Cash?
-					button.previous Previous
-					button.next(onclick="submitForm()") Submit
-
-			//- Feedback
-			fieldset
-				div.feedbackContainer
-					div#loaders
-						h2 Won't be a moment...
-						div.loader Loading...
-
-					div#formResubmission.displayNone
-						p An error has occurred. Please retry, if this occurs again please contact web@familycentre.org.au with the following
-						p#errorMessage
-
-					div.feedback.hidden#feedback
-						div.feedbackContent
-							h2 Your feedback is important
-							ul
-								p How did you hear about Breakout Carnival?
-								li
-									input(type="text", name="howDidYouHear")
-									label How did you hear about Breakout
-
-
-							ul.radio
-								p Do you attend a church?
-
-								li
-									input(type="radio", name="churchAttend", id="churchAttendYes", value="yes")
-									label(for="churchAttendYes") Yes
-
-								li
-									input(type="radio", name="churchAttend", id="churchAttendNo", value="no" checked)
-									label(for="churchAttendNo") No
-
-							div#churchAttendInfo.displayNone
-								ul
-									li
-										input(type="text", name="church")
-										label Which one?
-
-							ul.checkbox
-								p Which Future CFC events would you like to hear about?
-								li
-									input(type="checkbox", name="eventsKids", id="eventsKids")
-									label(for="eventsKids") CFC Kids
-									input(type="checkbox", name="eventsYouth", id="eventsYouth")
-									label(for="eventsYouth") CFC Youth
-									input(type="checkbox", name="eventsServices", id="eventsServices")
-									label(for="eventsServices") CFC Sunday Services
-									input(type="checkbox", name="eventsChristmas", id="eventsChristmas")
-									label(for="eventsChristmas") CFC Christmas and Easter Events
-									//- option CFC Kids
-								li
-									button.next(onclick="submitFeedback()") Submit
+						p Pocket knives or any other sharp object
+			form
+				button(onclick="return redirect('register.html?q=senior');")
+					p Register	

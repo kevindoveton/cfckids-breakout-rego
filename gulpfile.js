@@ -27,22 +27,29 @@ var paths = {
  * Compile .pug files and pass in data from json file
  * matching file name. index.pug - index.pug.json
  */
-gulp.task('pug', function () {
-  return gulp.src('./src/*.pug')
-    // .pipe(data(function (file) {
-    //   return require(paths.data + path.basename(file.path) + '.json');
-    // }))
-    .pipe(pug())
-    .pipe(gulp.dest(paths.public));
+gulp.task('pug', function (cb) {
+	pump([
+		gulp.src('./src/*.pug'),
+		pug(),
+    	gulp.dest(paths.public)
+	], function(e) {
+		if (e !== undefined)
+			console.log(e);
+		cb(null);
+	});
 });
 
-gulp.task('js', function() {
+gulp.task('js', function(cb) {
 	pump([
 		gulp.src('./src/js/*.js'),
 		concat('dist.js'),
 		uglify(),
 		gulp.dest(paths.js)
-	]);
+	], function(e) {
+		if (e !== undefined)
+			console.log(e);
+		cb(null);
+	});
 	return;
 });
 
