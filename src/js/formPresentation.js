@@ -3,7 +3,7 @@ $(function() {
 	// -------------------------------------------------
 	$("#fName").focusout(function() {
 		var childName = $("#fName").val();
-		$("#nominatedText").text("Nominated adult to pick up "+childName+" from Breakout Carnival");
+		$("#nominatedText").text("Nominated adult to pick up "+childName+" from CFC Kids Camp");
 		$("#sufferAnyFollowingText").text("Does "+childName+" suffer from any of the following that Team Leaders should know about to assist in their care? (Asthma, Severe Allergies, Dietary Needs, Convulsive Seizures, Physical Needs)");
 		$("#immunisationsText").text("Is "+childName+" fully up to date with their immunisations for their age?");
 		$("#anyOtherInfoText").text("Is there any other information – or health plan - which might assist us to care for "+childName+"? Please give details:");
